@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}Litmos User Management - Deactivate Users{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="page-header d-flex justify-content-between align-items-center">
+            <h1>
+                <i class="fas fa-user-minus text-danger me-2"></i> Deactivate Users
+            </h1>
+            <a href="/" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-2"></i> Back to Home
+            </a>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Instructions</h4>
+            </div>
+            <div class="card-body">
+                <p>Upload a CSV file containing usernames of Litmos users you want to deactivate. The system will process each user and attempt to deactivate them in Litmos.</p>
+                
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i> The CSV file must include a column named <strong>username</strong> with the Litmos usernames.
+                </div>
+                
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle me-2"></i> This operation will set the user's status to "Inactive" in Litmos. Deactivated users won't be able to log in to the Litmos system.
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h4>Upload CSV File</h4>
+            </div>
+            <div class="card-body">
+                <form id="deactivationForm" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="csvFile" class="form-label">Select CSV File</label>
+                        <input class="form-control" type="file" id="csvFile" accept=".csv" required>
+                        <div class="form-text">
+                            File must be in CSV format with a "username" column.
+                        </div>
+                    </div>
+                    
+                    <!-- CSV Preview -->
+                    <div id="csvPreview" class="mb-3">
+                        <!-- Preview will be inserted here -->
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-upload me-2"></i> Upload and Process
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/deactivation.js') }}"></script>
+{% endblock %}

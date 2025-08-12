@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}Litmos User Management - Home{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Litmos User Management</h1>
+            <p class="lead">Bulk activate or deactivate Litmos users using CSV files</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <i class="fas fa-user-plus fa-4x text-success"></i>
+                        </div>
+                        <h3 class="card-title">Bulk Activation</h3>
+                        <p class="card-text">
+                            Upload a CSV file with usernames to activate multiple Litmos users at once.
+                        </p>
+                        <a href="/activation" class="btn btn-success">
+                            <i class="fas fa-user-plus me-2"></i> Go to Activation
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <i class="fas fa-user-minus fa-4x text-danger"></i>
+                        </div>
+                        <h3 class="card-title">Bulk Deactivation</h3>
+                        <p class="card-text">
+                            Upload a CSV file with usernames to deactivate multiple Litmos users at once.
+                        </p>
+                        <a href="/deactivation" class="btn btn-danger">
+                            <i class="fas fa-user-minus me-2"></i> Go to Deactivation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4>Instructions</h4>
+            </div>
+            <div class="card-body">
+                <p>This application allows administrators to bulk manage Litmos users through CSV file processing and API integration.</p>
+                
+                <h5 class="mt-4">How to Use</h5>
+                <ol>
+                    <li>Choose whether you want to activate or deactivate users.</li>
+                    <li>Prepare a CSV file with a column named <strong>username</strong> containing the Litmos usernames.</li>
+                    <li>Upload the CSV file on the activation or deactivation page.</li>
+                    <li>The system will process each username and perform the requested operation via the Litmos API.</li>
+                    <li>You will be redirected to a results page showing the status of each operation.</li>
+                </ol>
+                
+                <h5 class="mt-4">CSV File Format</h5>
+                <p>The CSV file must include a column named <strong>username</strong>. Additional columns may be included but will be ignored.</p>
+                
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i> Example CSV file format:
+                    <pre class="mb-0">username,department,email
+john.doe,HR,john.doe@example.com
+jane.smith,IT,jane.smith@example.com
+robert.johnson,Marketing,robert.johnson@example.com</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

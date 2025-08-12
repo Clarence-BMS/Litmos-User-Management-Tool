@@ -1,0 +1,77 @@
+/* Custom styles on top of Bootstrap */
+
+/* Main container padding */
+.main-container {
+    padding: 2rem;
+}
+
+/* Card styling */
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* File input custom styling */
+.file-upload-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Result table custom styling */
+.result-success {
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.result-failure {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Instructions section */
+.instructions {
+    background-color: rgba(0, 123, 255, 0.05);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+/* Loading spinner */
+.spinner-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner-container {
+    text-align: center;
+    color: white;
+}
+
+/* CSV file preview table */
+.csv-preview {
+    margin-top: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Page header styling */
+.page-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+/* Custom footer */
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    border-top: 1px solid var(--bs-border-color);
+}
